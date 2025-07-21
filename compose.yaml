@@ -15,11 +15,13 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./backend:/app
+    env_file:
+      - ./backend/.env.prod
   frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    volumes:
-      - ./frontend:/app
     depends_on:
       - backend
+    env_file:
+      - ./frontend/.env.prod

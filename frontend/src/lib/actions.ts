@@ -2,7 +2,7 @@
 
 export async function sendBackendRequest(): Promise<{ success: true; data: string } | { success: false; error: string }> {
   try {
-    const response = await fetch('http://backend:8000', {
+    const response = await fetch(process.env.BACKEND_URL!, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

@@ -20,6 +20,7 @@ import { KafkaModule } from './kafka/kafka.module';
     SupabaseModule,
     ConfigModule.forRoot({
       isGlobal: true,
+      envFilePath: '.env.local',
     }),
     KafkaModule,
   ],
